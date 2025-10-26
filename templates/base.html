@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="{% static 'css/mi_estilo.css' %}">
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/1d71f92e0a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="icon" type="imagen/jpg" href="{% static 'img/logo.png' %}" width="40">
+</head>
+<body>
+  <header>
+    <nav>
+      {% include 'navbar.html' %}
+    </nav>
+  </header>
+  <main>
+    <div class="content">
+    {% block content %}
+    {% endblock %}
+    </div>
+  </main>
+  <footer>
+    {% include 'footer.html' %}
+  </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Servicios{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="sm:flex flex-row mx-5">
+    <div class="m-3 p-3 col-l-4">
+      <img src="{% static 'img/electric.png' %}" alt="Mi Logo2" class="w-full h-70">
+    </div>
+    <div class="m-3 p-3 col-l-8">
+      <article>
+        <h1 class="font-bold text-2xl">Estos son los servicios que ofrecemos en instalaciones el&eacute;ctricas residenciales</h1>
+        <section> 
+          <ul class="list-disc m-3 p-3">
+            <li>Instalaci&oacute;n de cableado el&eacute;ctrico</li>
+            <li>Instalaci&oacute;n de apagadores y enchufes</li>
+            <li>Mantenimiento preventivo</li>
+            <li>Diagn&oacute;stico y reparaci&oacute;n de fallas</li>
+          </ul>
+          <p>Recuerda que todos nuetros servicios tienen garant&iacute;a de 15 d&iacute;as despu&eacute;s del servicio</p>
+        </section>
+      </article>
+    </div>
+  </div>
+  <div class="sm:flex flex-row mx-5">
+    <div class="m-3 p-3 col-l-4">
+      <img src="{% static 'img/plomeria.png' %}" alt="Mi Logo2" class="w-full h-70">
+    </div>
+    <div class="m-3 p-3 col-l-8">
+      <article>
+        <h1 class="font-bold text-2xl">Estos son los servicios que ofrecemos plomer&iacute;a</h1>
+        <section> 
+          <ul class="list-disc m-3 p-3">
+            <li>Instalaci&oacute;n de tuberia para suministro de agua</li>
+            <li>Instalaci&oacute;n de lavabos, tarjas, tinacos, regaderas, boilers de paso y bomba de agua</li>
+            <li>Mantenimiento preventivo</li>
+            <li>Diagn&oacute;stico y reparaci&oacute;n de fugas en la tuberias</li>
+            <li>Reemplazo o reparaci&oacute;n de piezas da&ntilde;adas</li>
+          </ul>
+          <p>Recuerda que todos nuetros servicios tienen garant&iacute;a de 15 d&iacute;as despu&eacute;s del servicio</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</div>
+{% endblock %}

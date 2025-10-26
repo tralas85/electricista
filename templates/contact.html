@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Contacto {% endblock %}
+
+{% block content %}
+
+<div class="font-bold text-2xl flex justify-center mx-10 m-3 p-3">
+  <h2>Aqu&iacute; encontrar&aacute;s los medios de contacto</h2>
+</div>
+<div class="font-bold text-xl flex justify-center mx-5 m-3 p-3">
+  <h2>N&uacute;mero de Tel&eacute;fono: +52 478101023</h2>
+</div>
+<div class="font-bold text-xl flex justify-center mx-3 m-3 p-3">
+  <h2>Correo electr&oacute;nico: eltrala.85@gmail.com</h2>
+</div>
+
+<div class="row text-center content-center sm:mx-20">
+  <div class="w-full static">
+    <!--form-->
+    <div class="form-container">
+      <form action="{% url 'core:contact' %}" method="POST" class="was-validated">
+        {% csrf_token %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show font-bold text-2xl m-3" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <h2 style="text-align: center;" class="font-bold text-2xl m-3">Formulario de Contacto</h2>
+        <div class="input-cnt">
+          <i class="material-icons">person</i>
+          <input type="text" class="form-control" id="name" name="name" required placeholder="Nombre y Apellido">
+
+        </div>
+        <div class="input-cnt">
+          <i class="material-icons">email</i>
+          <input type="email" class="form-control" id="email" name="email" required
+            placeholder="Correo Electr&oacute;nico">
+        </div>
+        <div class="input-cnt">
+          <i class="material-icons textarea-icon">subject</i>
+          <input type="text" class="form-control" id="subject" name="subject" required placeholder="Asunto">
+        </div>
+        <div class="input-cnt">
+          <i class="material-icons textarea-icon">message</i>
+          <textarea name="message" id="message" rows="10" class="form-control" required
+            placeholder="Escribe tu mensaje..."></textarea>
+        </div>
+        <div class="input-cnt">
+          <button type="submit">Enviar Mensaje</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
